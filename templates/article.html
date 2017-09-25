@@ -1,0 +1,10 @@
+<!-- extend layout, and put out the article information -->
+
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Article Title: {{article.title}}</h1>
+    <small>Witten by {{article.author}}</small>
+    <hr>
+    <div>{{article.body | safe}}</div>
+{% endblock %}

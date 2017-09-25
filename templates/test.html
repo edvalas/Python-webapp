@@ -1,0 +1,9 @@
+<!-- randomg template for testing, here we extend the main layout page and block body has the
+content of this template, which is a list a data and I print out a list item for each item in data -->
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% for item in data %}
+        <li class="list-group-item">{{item._id}} {{item.name}} {{item.create_date}}</li>
+    {% endfor %}
+{% endblock %}

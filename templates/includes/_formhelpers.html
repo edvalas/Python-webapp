@@ -1,0 +1,12 @@
+<!-- form helper class, helps tp validate WTForms and outputs error
+messages if some input field is not validated, ie. does not have the minimum amount of characters
+then the error message tells that field y requires x amount of characters -->
+{% macro render_field(field) %}
+    {{ field.label}}
+    {{ field(**kwargs)| safe }}
+    {% if field.errors %}
+        {% for error in field.errors %}
+            <span class="help-inline">{{error}}</span>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
